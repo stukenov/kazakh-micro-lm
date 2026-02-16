@@ -56,7 +56,19 @@ kazakh-micro-lm/
 ├── vocab.json                # Pre-trained vocabulary
 ├── merges.txt                # BPE merges for tokenization
 ├── tokenizer.json            # Tokenizer configuration
-└── model.json                # Saved model weights
+├── model.json                # Saved model weights
+├── experiments/              # Training experiments and tools
+│   ├── min-rnn.py            # Minimal vanilla RNN (NumPy)
+│   ├── min-rnn2.py           # Minimal RNN with PyTorch
+│   ├── tf-rnn.py             # TensorFlow RNN implementation
+│   ├── llm-small.py          # Small LLM inference example
+│   ├── mgpt_tuning.py        # mGPT fine-tuning script
+│   ├── prepare-data-for-nanogpt.py      # Data preparation for nanoGPT
+│   ├── prepare-data-for-nano-tokenize.py # Tokenization preparation
+│   ├── show-tokenized.py     # Tokenization visualization
+│   └── clean-tokenize.py     # BPE tokenization example
+└── docs/
+    └── microLLM.md           # Project planning and resource requirements
 ```
 
 ## Implementation Details
@@ -110,6 +122,17 @@ python gpt2_minimal_kazakh.py
 - `n_heads`: Number of attention heads (default: 8)
 - `n_layers`: Number of transformer layers (default: 6)
 - `batch_size`: Training batch size (default: 64)
+
+## Experiments
+
+The `experiments/` directory contains various training scripts and tools for exploring different model architectures and tokenization approaches:
+
+- **RNN Implementations**: Compare vanilla RNN implementations across NumPy, PyTorch, and TensorFlow
+- **Tokenization Tools**: Scripts for data preparation, BPE tokenization, and token visualization
+- **Fine-tuning Scripts**: Examples for fine-tuning pre-trained models like mGPT on Kazakh text
+- **Data Preparation**: Tools to prepare datasets in the format expected by nanoGPT and other frameworks
+
+These scripts are ideal for experimentation and understanding different approaches to training language models.
 
 ## Use Cases
 
